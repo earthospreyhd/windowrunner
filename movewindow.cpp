@@ -9,23 +9,13 @@ int x = 500;
 
 int y = 250;
 
-LPTSTR out;
-
 POINT curpos;
 
-RECT res;
-
 int num;
-
-HWND desk = GetDesktopWindow();
 
 int xoff;
 
 int yoff;
-
-int rat1;
-
-int rat2;
 
 int lesseradd;
 
@@ -39,8 +29,6 @@ int main()
 {
 
 	HWND conhandle = GetForegroundWindow();
-
-	GetWindowRect(desk, &res);
 
 	MoveWindow(conhandle, x, y, 300, 400, TRUE);
 
@@ -56,12 +44,6 @@ int main()
 
 	bool xislarger = FALSE;
 
-	//void bumpwin(int up, int bot) {
-
-
-
-	//}
-
 	while (true) {
 
 		conhandle = GetForegroundWindow();
@@ -73,10 +55,6 @@ int main()
 		yoff = curpos.y - y - 200;
 
 		if (xoff < 250 && xoff > -250 && yoff < 250 && yoff > -250) {
-
-			//cout << xoff << " ";
-
-			//cout << yoff << endl;
 
 			destx = xoff;
 
@@ -135,7 +113,7 @@ int main()
 
 					MoveWindow(conhandle, greateradd, lesseradd, 300, 400, FALSE);
 
-					cout << "x is " << greateradd << " y is " << lesseradd << " " << abs(greater / lesser + 1) << endl;
+					cout << "x is " << greateradd << " y is " << lesseradd << endl;
 
 					x = greateradd;
 
